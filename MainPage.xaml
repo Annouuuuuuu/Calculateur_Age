@@ -14,24 +14,24 @@
                 FontSize="16"
                 HorizontalOptions="Center" />
             <Entry
-                x:Name="entryNom"
                 Placeholder="votre nom"
-                HorizontalOptions="Fill" />
+                HorizontalOptions="Fill"
+                Text="{Binding Nom, Mode=TwoWay}" />
                 <Label 
                 Text="Date de Naissance"
                 FontSize="16"
                 HorizontalOptions="Center" />
             <DatePicker 
-                x:Name="PickerDate" />
+                x:Name="PickerDate"
+                Date="{Binding DateNaissance}" />
             <Button 
-                x:Name="btnCalculer"
                 Text="Calculer"
-                Clicked="OnCalculerClicked"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center" 
+                Command="{Binding CalculerCommand}"/>
             <Label 
-                x:Name="lblResultat"
                 FontSize="20"
-                IsVisible="False"
+                IsVisible="{Binding ResultatVisible}"
+                Text="{Binding Resultat}"
                 HorizontalOptions="Center" />
 
         </VerticalStackLayout>
